@@ -1,0 +1,74 @@
+# Security Service - JWT and OAuth2 Instructions
+
+This microservice handles authentication using JWT (JSON Web Tokens) and OAuth2 (Google, GitHub, etc.). It provides a centralized authentication mechanism for your other applications.
+
+## 1. Configuration
+
+### 1.1 OAuth2 Providers
+To enable OAuth2 login, you need to register your application with the providers (Google, GitHub) and get the Client ID and Client Secret.
+
+**Google:**
+1. Go to [Google Cloud Console](https://console.cloud.google.com/).
+2. Create a new project.
+3. Go to "APIs & Services" > "Credentials".
+4. Create Credentials > OAuth client ID.
+5. Application type: Web application.
+6. Authorized redirect URIs: `http://localhost:8084/login/oauth2/code/google`
+7. Copy Client ID and Client Secret.
+
+**GitHub:**
+1. Go to GitHub Settings > Developer settings > OAuth Apps.
+2. New OAuth App.
+3. Authorization callback URL: `http://localhost:8084/login/oauth2/code/github`
+4. Copy Client ID and Client Secret.
+
+**Update `src/main/resources/application.properties`:**
+Uncomment and replace the placeholders with your actual credentials:
+```properties
+spring.security.oauth2.client.registration.google.client-id=YOUR_GOOGLE_CLIENT_ID
+spring.security.oauth2.client.registration.google.client-secret=YOUR_GOOGLE_CLIENT_SECRET
+spring.security.oauth2.client.registration.github.client-id=YOUR_GITHUB_CLIENT_ID
+spring.security.oauth2.client.registration.github.client-secret=YOUR_GITHUB_CLIENT_SECRET
+```
+
+### 1.2 JWT Configuration
+The JWT secret and expiration are configured in `application.properties`. You can change them if needed.
+```properties
+app.jwt-secret=daf66e01593f61a15b857cf433aae03a005812b31234e149036bcc8dee755dbb
+app.jwt-expiration-milliseconds=604800000
+```
+
+## 2. Running the Service
+Run the application using Maven:
+```bash
+mvn spring-boot:run
+```
+The service will start on port `8084`.
+
+## 3. Workflow
+
+### 3.1 User Registration/Login (Standard)
+- **Endpoint:** `/api/auth/register`, `/api/auth/login`
+- **Flow:** User sends credentials -> Service validates -> Returns JWT.
+
+### 3.2 OAuth2 Login
+- **Endpoint:** `/oauth2/authorization/google` or `/oauth2/authorization/github`
+- **Flow:**
+    1. User clicks "Login with Google".
+    2. Browser redirects to Google login.
+    3. Google redirects back to `http://localhost:8084/login/oauth2/code/google`.
+    4. `OAuth2LoginSuccessHandler` generates a JWT.
+    5. User is redirected to `http://localhost:8080/welcome?token={JWT}` (Configure this URL in `OAuth2LoginSuccessHandler.java`).
+
+### 3.3 Using JWT in Other Microservices
+To secure other microservices using this auth service:
+1. **Include JWT Library:** Add `jjwt` dependencies to the other service.
+2. **Shared Secret:** Use the SAME `app.jwt-secret` in the other service.
+3. **Validate Token:**
+    - Extract the token from the `Authorization: Bearer {token}` header.
+    - Use `Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(token)` to validate.
+    - If valid, trust the user claims (username, roles) inside the token.
+
+## 4. Testing
+- **Postman:** Use for standard login/register.
+- **Browser:** Use for OAuth2 login flow.
