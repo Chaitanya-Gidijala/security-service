@@ -9,6 +9,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
@@ -22,6 +24,7 @@ public class DataInitializer implements CommandLineRunner {
     private final PasswordEncoder passwordEncoder;
 
     @Override
+    @Transactional
     public void run(String... args) throws Exception {
         // 1. Ensure Roles exist
         Role adminRole = roleRepository.findByName("ROLE_ADMIN")
@@ -31,7 +34,7 @@ public class DataInitializer implements CommandLineRunner {
                 .orElseGet(() -> roleRepository.save(new Role(null, "ROLE_USER")));
 
         // 2. Create Admin user if it doesn't exist
-        if (!userRepository.existsByUsername("admin")) {
+        if (!userRepository.existsByUsername("admin@chaitanyatechworld.com")) {
             User admin = new User();
             admin.setUsername("admin@chaitanyatechworld.com");
             admin.setEmail("admin@chaitanyatechworld.com");
