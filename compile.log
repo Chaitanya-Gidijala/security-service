@@ -1,0 +1,641 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< com.security:security-service >--------------------
+[INFO] Building security-service 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.3.2:clean (default-clean) @ security-service ---
+[INFO] Deleting E:\myproject\findsharp\security-service\target
+[INFO] 
+[INFO] --- maven-resources-plugin:3.3.1:resources (default-resources) @ security-service ---
+[INFO] Copying 3 resources from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.13.0:compile (default-compile) @ security-service ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 35 source files with javac [debug parameters release 21] to target\classes
+[INFO] Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing.
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/oauth2/OAuth2UserService.java:[29,8] class CustomOAuth2UserService is public, should be declared in a file named CustomOAuth2UserService.java
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/config/DataInitializer.java:[48,30] cannot find symbol
+  symbol:   method builder()
+  location: class com.security.entity.User
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/config/DataInitializer.java:[58,13] cannot find symbol
+  symbol:   variable log
+  location: class com.security.config.DataInitializer
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/config/DataInitializer.java:[65,17] cannot find symbol
+  symbol:   method setName(java.lang.String)
+  location: variable role of type com.security.entity.Role
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/config/DataInitializer.java:[67,13] cannot find symbol
+  symbol:   variable log
+  location: class com.security.config.DataInitializer
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/JwtAuthenticationEntryPoint.java:[33,9] cannot find symbol
+  symbol:   variable log
+  location: class com.security.security.JwtAuthenticationEntryPoint
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/JwtAuthenticationFilter.java:[48,13] cannot find symbol
+  symbol:   variable log
+  location: class com.security.security.JwtAuthenticationFilter
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/oauth2/OAuth2UserService.java:[42,9] cannot find symbol
+  symbol:   variable log
+  location: class com.security.security.oauth2.CustomOAuth2UserService
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/oauth2/OAuth2UserService.java:[49,13] cannot find symbol
+  symbol:   variable log
+  location: class com.security.security.oauth2.CustomOAuth2UserService
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/oauth2/OAuth2UserService.java:[57,9] cannot find symbol
+  symbol:   variable log
+  location: class com.security.security.oauth2.CustomOAuth2UserService
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/oauth2/OAuth2UserService.java:[72,17] cannot find symbol
+  symbol:   method getProvider()
+  location: variable user of type com.security.entity.User
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/oauth2/OAuth2UserService.java:[73,17] cannot find symbol
+  symbol:   method setProvider(com.security.entity.AuthProvider)
+  location: variable user of type com.security.entity.User
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/oauth2/OAuth2UserService.java:[74,17] cannot find symbol
+  symbol:   method setProviderId(java.lang.String)
+  location: variable user of type com.security.entity.User
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/oauth2/OAuth2UserService.java:[77,17] cannot find symbol
+  symbol:   method getName()
+  location: variable user of type com.security.entity.User
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/oauth2/OAuth2UserService.java:[78,17] cannot find symbol
+  symbol:   method setName(java.lang.String)
+  location: variable user of type com.security.entity.User
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/oauth2/OAuth2UserService.java:[87,14] cannot find symbol
+  symbol:   method setName(java.lang.String)
+  location: variable r of type com.security.entity.Role
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/oauth2/OAuth2UserService.java:[93,28] cannot find symbol
+  symbol:   method builder()
+  location: class com.security.entity.User
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/oauth2/OAuth2UserService.java:[103,9] cannot find symbol
+  symbol:   variable log
+  location: class com.security.security.oauth2.CustomOAuth2UserService
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/oauth2/OAuth2LoginSuccessHandler.java:[44,13] cannot find symbol
+  symbol:   variable log
+  location: class com.security.security.oauth2.OAuth2LoginSuccessHandler
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/oauth2/OAuth2LoginSuccessHandler.java:[54,9] cannot find symbol
+  symbol:   variable log
+  location: class com.security.security.oauth2.OAuth2LoginSuccessHandler
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/JwtTokenProvider.java:[47,9] cannot find symbol
+  symbol:   variable log
+  location: class com.security.security.JwtTokenProvider
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/JwtTokenProvider.java:[80,13] cannot find symbol
+  symbol:   variable log
+  location: class com.security.security.JwtTokenProvider
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/JwtTokenProvider.java:[82,13] cannot find symbol
+  symbol:   variable log
+  location: class com.security.security.JwtTokenProvider
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/JwtTokenProvider.java:[84,13] cannot find symbol
+  symbol:   variable log
+  location: class com.security.security.JwtTokenProvider
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/JwtTokenProvider.java:[86,13] cannot find symbol
+  symbol:   variable log
+  location: class com.security.security.JwtTokenProvider
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/JwtTokenProvider.java:[88,13] cannot find symbol
+  symbol:   variable log
+  location: class com.security.security.JwtTokenProvider
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/controller/AuthController.java:[44,9] cannot find symbol
+  symbol:   variable log
+  location: class com.security.controller.AuthController
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/controller/AuthController.java:[44,51] cannot find symbol
+  symbol:   method getUsernameOrEmail()
+  location: variable loginDto of type @jakarta.validation.Valid com.security.dto.LoginDto
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/controller/AuthController.java:[59,9] cannot find symbol
+  symbol:   variable log
+  location: class com.security.controller.AuthController
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/controller/AuthController.java:[59,70] cannot find symbol
+  symbol:   method getUsername()
+  location: variable registerDto of type @jakarta.validation.Valid com.security.dto.RegisterDto
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/controller/AuthController.java:[70,9] cannot find symbol
+  symbol:   variable log
+  location: class com.security.controller.AuthController
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/controller/AuthController.java:[71,79] cannot find symbol
+  symbol:   method getToken()
+  location: variable request of type @jakarta.validation.Valid com.security.dto.ValidateTokenRequest
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/controller/AuthController.java:[72,36] cannot find symbol
+  symbol:   method isValid()
+  location: variable validation of type com.security.dto.TokenValidationResponse
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/dto/ApiResponse.java:[30,27] cannot find symbol
+  symbol:   method <T>builder()
+  location: class com.security.dto.ApiResponse
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/dto/ApiResponse.java:[39,27] cannot find symbol
+  symbol:   method <T>builder()
+  location: class com.security.dto.ApiResponse
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/dto/ApiResponse.java:[47,27] cannot find symbol
+  symbol:   method <T>builder()
+  location: class com.security.dto.ApiResponse
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/controller/DemoController.java:[26,9] cannot find symbol
+  symbol:   variable log
+  location: class com.security.controller.DemoController
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/controller/UserController.java:[40,9] cannot find symbol
+  symbol:   variable log
+  location: class com.security.controller.UserController
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/controller/UserController.java:[49,9] cannot find symbol
+  symbol:   variable log
+  location: class com.security.controller.UserController
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/controller/UserController.java:[58,9] cannot find symbol
+  symbol:   variable log
+  location: class com.security.controller.UserController
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/controller/UserController.java:[68,9] cannot find symbol
+  symbol:   variable log
+  location: class com.security.controller.UserController
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/controller/UserController.java:[77,9] cannot find symbol
+  symbol:   variable log
+  location: class com.security.controller.UserController
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/controller/UserController.java:[86,9] cannot find symbol
+  symbol:   variable log
+  location: class com.security.controller.UserController
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/exception/GlobalExceptionHandler.java:[30,9] cannot find symbol
+  symbol:   variable log
+  location: class com.security.exception.GlobalExceptionHandler
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/exception/GlobalExceptionHandler.java:[36,64] cannot find symbol
+  symbol:   method <java.util.Map<java.lang.String,java.lang.String>>builder()
+  location: class com.security.dto.ApiResponse
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/exception/GlobalExceptionHandler.java:[47,9] cannot find symbol
+  symbol:   variable log
+  location: class com.security.exception.GlobalExceptionHandler
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/exception/GlobalExceptionHandler.java:[53,9] cannot find symbol
+  symbol:   variable log
+  location: class com.security.exception.GlobalExceptionHandler
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/exception/GlobalExceptionHandler.java:[59,9] cannot find symbol
+  symbol:   variable log
+  location: class com.security.exception.GlobalExceptionHandler
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/exception/GlobalExceptionHandler.java:[65,9] cannot find symbol
+  symbol:   variable log
+  location: class com.security.exception.GlobalExceptionHandler
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/exception/GlobalExceptionHandler.java:[71,9] cannot find symbol
+  symbol:   variable log
+  location: class com.security.exception.GlobalExceptionHandler
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/exception/GlobalExceptionHandler.java:[77,9] cannot find symbol
+  symbol:   variable log
+  location: class com.security.exception.GlobalExceptionHandler
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/exception/GlobalExceptionHandler.java:[83,9] cannot find symbol
+  symbol:   variable log
+  location: class com.security.exception.GlobalExceptionHandler
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/oauth2/OAuth2UserPrincipal.java:[45,20] cannot find symbol
+  symbol:   method getEmail()
+  location: variable user of type com.security.entity.User
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/oauth2/OAuth2UserPrincipal.java:[52,20] cannot find symbol
+  symbol:   method getRoles()
+  location: variable user of type com.security.entity.User
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/oauth2/OAuth2UserPrincipal.java:[59,20] cannot find symbol
+  symbol:   method getPassword()
+  location: variable user of type com.security.entity.User
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/oauth2/OAuth2UserPrincipal.java:[64,20] cannot find symbol
+  symbol:   method getUsername()
+  location: variable user of type com.security.entity.User
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/oauth2/OAuth2UserPrincipal.java:[70,69] cannot find symbol
+  symbol:   method isActive()
+  location: variable user of type com.security.entity.User
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/CustomUserDetailsService.java:[29,9] cannot find symbol
+  symbol:   variable log
+  location: class com.security.service.CustomUserDetailsService
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/CustomUserDetailsService.java:[34,21] cannot find symbol
+  symbol:   variable log
+  location: class com.security.service.CustomUserDetailsService
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/CustomUserDetailsService.java:[38,49] cannot find symbol
+  symbol:   method getRoles()
+  location: variable user of type com.security.entity.User
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/CustomUserDetailsService.java:[43,21] cannot find symbol
+  symbol:   method getUsername()
+  location: variable user of type com.security.entity.User
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/CustomUserDetailsService.java:[44,21] cannot find symbol
+  symbol:   method getPassword()
+  location: variable user of type com.security.entity.User
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/CustomUserDetailsService.java:[44,50] cannot find symbol
+  symbol:   method getPassword()
+  location: variable user of type com.security.entity.User
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/CustomUserDetailsService.java:[45,21] cannot find symbol
+  symbol:   method isActive()
+  location: variable user of type com.security.entity.User
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[44,9] cannot find symbol
+  symbol:   variable log
+  location: class com.security.service.impl.AuthServiceImpl
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[44,54] cannot find symbol
+  symbol:   method getUsernameOrEmail()
+  location: variable loginDto of type com.security.dto.LoginDto
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[48,33] cannot find symbol
+  symbol:   method getUsernameOrEmail()
+  location: variable loginDto of type com.security.dto.LoginDto
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[49,33] cannot find symbol
+  symbol:   method getPassword()
+  location: variable loginDto of type com.security.dto.LoginDto
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[55,48] cannot find symbol
+  symbol:   method getUsernameOrEmail()
+  location: variable loginDto of type com.security.dto.LoginDto
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[55,79] cannot find symbol
+  symbol:   method getUsernameOrEmail()
+  location: variable loginDto of type com.security.dto.LoginDto
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[58,9] cannot find symbol
+  symbol:   variable log
+  location: class com.security.service.impl.AuthServiceImpl
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[58,54] cannot find symbol
+  symbol:   method getUsernameOrEmail()
+  location: variable loginDto of type com.security.dto.LoginDto
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[60,31] cannot find symbol
+  symbol:   method builder()
+  location: class com.security.dto.JwtAuthResponse
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[71,9] cannot find symbol
+  symbol:   variable log
+  location: class com.security.service.impl.AuthServiceImpl
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[71,73] cannot find symbol
+  symbol:   method getUsername()
+  location: variable registerDto of type com.security.dto.RegisterDto
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[73,56] cannot find symbol
+  symbol:   method getUsername()
+  location: variable registerDto of type com.security.dto.RegisterDto
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[75,47] cannot find symbol
+  symbol:   method getUsername()
+  location: variable registerDto of type com.security.dto.RegisterDto
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[77,53] cannot find symbol
+  symbol:   method getEmail()
+  location: variable registerDto of type com.security.dto.RegisterDto
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[79,44] cannot find symbol
+  symbol:   method getEmail()
+  location: variable registerDto of type com.security.dto.RegisterDto
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[89,25] cannot find symbol
+  symbol:   method builder()
+  location: class com.security.entity.User
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[90,34] cannot find symbol
+  symbol:   method getName()
+  location: variable registerDto of type com.security.dto.RegisterDto
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[91,38] cannot find symbol
+  symbol:   method getUsername()
+  location: variable registerDto of type com.security.dto.RegisterDto
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[92,35] cannot find symbol
+  symbol:   method getEmail()
+  location: variable registerDto of type com.security.dto.RegisterDto
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[93,61] cannot find symbol
+  symbol:   method getPassword()
+  location: variable registerDto of type com.security.dto.RegisterDto
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[100,9] cannot find symbol
+  symbol:   variable log
+  location: class com.security.service.impl.AuthServiceImpl
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[100,65] cannot find symbol
+  symbol:   method getUsername()
+  location: variable registerDto of type com.security.dto.RegisterDto
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[104,28] cannot find symbol
+  symbol:   method getUsername()
+  location: variable registerDto of type com.security.dto.RegisterDto
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[112,43] cannot find symbol
+  symbol:   method builder()
+  location: class com.security.dto.TokenValidationResponse
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[118,39] cannot find symbol
+  symbol:   method builder()
+  location: class com.security.dto.TokenValidationResponse
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[125,23] cannot find symbol
+  symbol:   method builder()
+  location: class com.security.dto.UserDto
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[126,25] cannot find symbol
+  symbol:   method getId()
+  location: variable user of type com.security.entity.User
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[127,27] cannot find symbol
+  symbol:   method getName()
+  location: variable user of type com.security.entity.User
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[128,31] cannot find symbol
+  symbol:   method getUsername()
+  location: variable user of type com.security.entity.User
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[129,28] cannot find symbol
+  symbol:   method getEmail()
+  location: variable user of type com.security.entity.User
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[130,29] cannot find symbol
+  symbol:   method isActive()
+  location: variable user of type com.security.entity.User
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[131,31] cannot find symbol
+  symbol:   method getProvider()
+  location: variable user of type com.security.entity.User
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[132,28] cannot find symbol
+  symbol:   method getRoles()
+  location: variable user of type com.security.entity.User
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[132,53] invalid method reference
+  cannot find symbol
+    symbol:   method getName()
+    location: class com.security.entity.Role
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[133,32] cannot find symbol
+  symbol:   method getCreatedAt()
+  location: variable user of type com.security.entity.User
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[134,32] cannot find symbol
+  symbol:   method getUpdatedAt()
+  location: variable user of type com.security.entity.User
+[INFO] 100 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  9.445 s
+[INFO] Finished at: 2026-03-30T21:37:23+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.13.0:compile (default-compile) on project security-service: Compilation failure: Compilation failure: 
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/oauth2/OAuth2UserService.java:[29,8] class CustomOAuth2UserService is public, should be declared in a file named CustomOAuth2UserService.java
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/config/DataInitializer.java:[48,30] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class com.security.entity.User
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/config/DataInitializer.java:[58,13] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.security.config.DataInitializer
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/config/DataInitializer.java:[65,17] cannot find symbol
+[ERROR]   symbol:   method setName(java.lang.String)
+[ERROR]   location: variable role of type com.security.entity.Role
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/config/DataInitializer.java:[67,13] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.security.config.DataInitializer
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/JwtAuthenticationEntryPoint.java:[33,9] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.security.security.JwtAuthenticationEntryPoint
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/JwtAuthenticationFilter.java:[48,13] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.security.security.JwtAuthenticationFilter
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/oauth2/OAuth2UserService.java:[42,9] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.security.security.oauth2.CustomOAuth2UserService
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/oauth2/OAuth2UserService.java:[49,13] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.security.security.oauth2.CustomOAuth2UserService
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/oauth2/OAuth2UserService.java:[57,9] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.security.security.oauth2.CustomOAuth2UserService
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/oauth2/OAuth2UserService.java:[72,17] cannot find symbol
+[ERROR]   symbol:   method getProvider()
+[ERROR]   location: variable user of type com.security.entity.User
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/oauth2/OAuth2UserService.java:[73,17] cannot find symbol
+[ERROR]   symbol:   method setProvider(com.security.entity.AuthProvider)
+[ERROR]   location: variable user of type com.security.entity.User
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/oauth2/OAuth2UserService.java:[74,17] cannot find symbol
+[ERROR]   symbol:   method setProviderId(java.lang.String)
+[ERROR]   location: variable user of type com.security.entity.User
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/oauth2/OAuth2UserService.java:[77,17] cannot find symbol
+[ERROR]   symbol:   method getName()
+[ERROR]   location: variable user of type com.security.entity.User
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/oauth2/OAuth2UserService.java:[78,17] cannot find symbol
+[ERROR]   symbol:   method setName(java.lang.String)
+[ERROR]   location: variable user of type com.security.entity.User
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/oauth2/OAuth2UserService.java:[87,14] cannot find symbol
+[ERROR]   symbol:   method setName(java.lang.String)
+[ERROR]   location: variable r of type com.security.entity.Role
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/oauth2/OAuth2UserService.java:[93,28] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class com.security.entity.User
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/oauth2/OAuth2UserService.java:[103,9] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.security.security.oauth2.CustomOAuth2UserService
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/oauth2/OAuth2LoginSuccessHandler.java:[44,13] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.security.security.oauth2.OAuth2LoginSuccessHandler
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/oauth2/OAuth2LoginSuccessHandler.java:[54,9] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.security.security.oauth2.OAuth2LoginSuccessHandler
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/JwtTokenProvider.java:[47,9] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.security.security.JwtTokenProvider
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/JwtTokenProvider.java:[80,13] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.security.security.JwtTokenProvider
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/JwtTokenProvider.java:[82,13] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.security.security.JwtTokenProvider
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/JwtTokenProvider.java:[84,13] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.security.security.JwtTokenProvider
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/JwtTokenProvider.java:[86,13] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.security.security.JwtTokenProvider
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/JwtTokenProvider.java:[88,13] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.security.security.JwtTokenProvider
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/controller/AuthController.java:[44,9] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.security.controller.AuthController
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/controller/AuthController.java:[44,51] cannot find symbol
+[ERROR]   symbol:   method getUsernameOrEmail()
+[ERROR]   location: variable loginDto of type @jakarta.validation.Valid com.security.dto.LoginDto
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/controller/AuthController.java:[59,9] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.security.controller.AuthController
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/controller/AuthController.java:[59,70] cannot find symbol
+[ERROR]   symbol:   method getUsername()
+[ERROR]   location: variable registerDto of type @jakarta.validation.Valid com.security.dto.RegisterDto
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/controller/AuthController.java:[70,9] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.security.controller.AuthController
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/controller/AuthController.java:[71,79] cannot find symbol
+[ERROR]   symbol:   method getToken()
+[ERROR]   location: variable request of type @jakarta.validation.Valid com.security.dto.ValidateTokenRequest
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/controller/AuthController.java:[72,36] cannot find symbol
+[ERROR]   symbol:   method isValid()
+[ERROR]   location: variable validation of type com.security.dto.TokenValidationResponse
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/dto/ApiResponse.java:[30,27] cannot find symbol
+[ERROR]   symbol:   method <T>builder()
+[ERROR]   location: class com.security.dto.ApiResponse
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/dto/ApiResponse.java:[39,27] cannot find symbol
+[ERROR]   symbol:   method <T>builder()
+[ERROR]   location: class com.security.dto.ApiResponse
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/dto/ApiResponse.java:[47,27] cannot find symbol
+[ERROR]   symbol:   method <T>builder()
+[ERROR]   location: class com.security.dto.ApiResponse
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/controller/DemoController.java:[26,9] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.security.controller.DemoController
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/controller/UserController.java:[40,9] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.security.controller.UserController
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/controller/UserController.java:[49,9] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.security.controller.UserController
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/controller/UserController.java:[58,9] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.security.controller.UserController
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/controller/UserController.java:[68,9] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.security.controller.UserController
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/controller/UserController.java:[77,9] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.security.controller.UserController
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/controller/UserController.java:[86,9] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.security.controller.UserController
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/exception/GlobalExceptionHandler.java:[30,9] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.security.exception.GlobalExceptionHandler
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/exception/GlobalExceptionHandler.java:[36,64] cannot find symbol
+[ERROR]   symbol:   method <java.util.Map<java.lang.String,java.lang.String>>builder()
+[ERROR]   location: class com.security.dto.ApiResponse
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/exception/GlobalExceptionHandler.java:[47,9] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.security.exception.GlobalExceptionHandler
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/exception/GlobalExceptionHandler.java:[53,9] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.security.exception.GlobalExceptionHandler
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/exception/GlobalExceptionHandler.java:[59,9] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.security.exception.GlobalExceptionHandler
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/exception/GlobalExceptionHandler.java:[65,9] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.security.exception.GlobalExceptionHandler
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/exception/GlobalExceptionHandler.java:[71,9] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.security.exception.GlobalExceptionHandler
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/exception/GlobalExceptionHandler.java:[77,9] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.security.exception.GlobalExceptionHandler
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/exception/GlobalExceptionHandler.java:[83,9] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.security.exception.GlobalExceptionHandler
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/oauth2/OAuth2UserPrincipal.java:[45,20] cannot find symbol
+[ERROR]   symbol:   method getEmail()
+[ERROR]   location: variable user of type com.security.entity.User
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/oauth2/OAuth2UserPrincipal.java:[52,20] cannot find symbol
+[ERROR]   symbol:   method getRoles()
+[ERROR]   location: variable user of type com.security.entity.User
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/oauth2/OAuth2UserPrincipal.java:[59,20] cannot find symbol
+[ERROR]   symbol:   method getPassword()
+[ERROR]   location: variable user of type com.security.entity.User
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/oauth2/OAuth2UserPrincipal.java:[64,20] cannot find symbol
+[ERROR]   symbol:   method getUsername()
+[ERROR]   location: variable user of type com.security.entity.User
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/security/oauth2/OAuth2UserPrincipal.java:[70,69] cannot find symbol
+[ERROR]   symbol:   method isActive()
+[ERROR]   location: variable user of type com.security.entity.User
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/CustomUserDetailsService.java:[29,9] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.security.service.CustomUserDetailsService
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/CustomUserDetailsService.java:[34,21] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.security.service.CustomUserDetailsService
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/CustomUserDetailsService.java:[38,49] cannot find symbol
+[ERROR]   symbol:   method getRoles()
+[ERROR]   location: variable user of type com.security.entity.User
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/CustomUserDetailsService.java:[43,21] cannot find symbol
+[ERROR]   symbol:   method getUsername()
+[ERROR]   location: variable user of type com.security.entity.User
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/CustomUserDetailsService.java:[44,21] cannot find symbol
+[ERROR]   symbol:   method getPassword()
+[ERROR]   location: variable user of type com.security.entity.User
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/CustomUserDetailsService.java:[44,50] cannot find symbol
+[ERROR]   symbol:   method getPassword()
+[ERROR]   location: variable user of type com.security.entity.User
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/CustomUserDetailsService.java:[45,21] cannot find symbol
+[ERROR]   symbol:   method isActive()
+[ERROR]   location: variable user of type com.security.entity.User
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[44,9] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.security.service.impl.AuthServiceImpl
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[44,54] cannot find symbol
+[ERROR]   symbol:   method getUsernameOrEmail()
+[ERROR]   location: variable loginDto of type com.security.dto.LoginDto
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[48,33] cannot find symbol
+[ERROR]   symbol:   method getUsernameOrEmail()
+[ERROR]   location: variable loginDto of type com.security.dto.LoginDto
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[49,33] cannot find symbol
+[ERROR]   symbol:   method getPassword()
+[ERROR]   location: variable loginDto of type com.security.dto.LoginDto
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[55,48] cannot find symbol
+[ERROR]   symbol:   method getUsernameOrEmail()
+[ERROR]   location: variable loginDto of type com.security.dto.LoginDto
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[55,79] cannot find symbol
+[ERROR]   symbol:   method getUsernameOrEmail()
+[ERROR]   location: variable loginDto of type com.security.dto.LoginDto
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[58,9] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.security.service.impl.AuthServiceImpl
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[58,54] cannot find symbol
+[ERROR]   symbol:   method getUsernameOrEmail()
+[ERROR]   location: variable loginDto of type com.security.dto.LoginDto
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[60,31] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class com.security.dto.JwtAuthResponse
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[71,9] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.security.service.impl.AuthServiceImpl
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[71,73] cannot find symbol
+[ERROR]   symbol:   method getUsername()
+[ERROR]   location: variable registerDto of type com.security.dto.RegisterDto
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[73,56] cannot find symbol
+[ERROR]   symbol:   method getUsername()
+[ERROR]   location: variable registerDto of type com.security.dto.RegisterDto
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[75,47] cannot find symbol
+[ERROR]   symbol:   method getUsername()
+[ERROR]   location: variable registerDto of type com.security.dto.RegisterDto
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[77,53] cannot find symbol
+[ERROR]   symbol:   method getEmail()
+[ERROR]   location: variable registerDto of type com.security.dto.RegisterDto
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[79,44] cannot find symbol
+[ERROR]   symbol:   method getEmail()
+[ERROR]   location: variable registerDto of type com.security.dto.RegisterDto
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[89,25] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class com.security.entity.User
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[90,34] cannot find symbol
+[ERROR]   symbol:   method getName()
+[ERROR]   location: variable registerDto of type com.security.dto.RegisterDto
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[91,38] cannot find symbol
+[ERROR]   symbol:   method getUsername()
+[ERROR]   location: variable registerDto of type com.security.dto.RegisterDto
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[92,35] cannot find symbol
+[ERROR]   symbol:   method getEmail()
+[ERROR]   location: variable registerDto of type com.security.dto.RegisterDto
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[93,61] cannot find symbol
+[ERROR]   symbol:   method getPassword()
+[ERROR]   location: variable registerDto of type com.security.dto.RegisterDto
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[100,9] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.security.service.impl.AuthServiceImpl
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[100,65] cannot find symbol
+[ERROR]   symbol:   method getUsername()
+[ERROR]   location: variable registerDto of type com.security.dto.RegisterDto
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[104,28] cannot find symbol
+[ERROR]   symbol:   method getUsername()
+[ERROR]   location: variable registerDto of type com.security.dto.RegisterDto
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[112,43] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class com.security.dto.TokenValidationResponse
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[118,39] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class com.security.dto.TokenValidationResponse
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[125,23] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class com.security.dto.UserDto
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[126,25] cannot find symbol
+[ERROR]   symbol:   method getId()
+[ERROR]   location: variable user of type com.security.entity.User
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[127,27] cannot find symbol
+[ERROR]   symbol:   method getName()
+[ERROR]   location: variable user of type com.security.entity.User
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[128,31] cannot find symbol
+[ERROR]   symbol:   method getUsername()
+[ERROR]   location: variable user of type com.security.entity.User
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[129,28] cannot find symbol
+[ERROR]   symbol:   method getEmail()
+[ERROR]   location: variable user of type com.security.entity.User
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[130,29] cannot find symbol
+[ERROR]   symbol:   method isActive()
+[ERROR]   location: variable user of type com.security.entity.User
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[131,31] cannot find symbol
+[ERROR]   symbol:   method getProvider()
+[ERROR]   location: variable user of type com.security.entity.User
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[132,28] cannot find symbol
+[ERROR]   symbol:   method getRoles()
+[ERROR]   location: variable user of type com.security.entity.User
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[132,53] invalid method reference
+[ERROR]   cannot find symbol
+[ERROR]     symbol:   method getName()
+[ERROR]     location: class com.security.entity.Role
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[133,32] cannot find symbol
+[ERROR]   symbol:   method getCreatedAt()
+[ERROR]   location: variable user of type com.security.entity.User
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/service/impl/AuthServiceImpl.java:[134,32] cannot find symbol
+[ERROR]   symbol:   method getUpdatedAt()
+[ERROR]   location: variable user of type com.security.entity.User
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

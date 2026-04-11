@@ -1,37 +1,36 @@
 package com.security.dto;
 
 import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
-public class RegisterDto {
+import java.util.Set;
 
-    @NotBlank(message = "Name is required")
+public class UpdateUserRequest {
+
     @Size(min = 2, max = 50, message = "Name must be between 2 and 50 characters")
     private String name;
 
-    @NotBlank(message = "Username is required")
     @Size(min = 3, max = 20, message = "Username must be between 3 and 20 characters")
     @Pattern(regexp = "^[a-zA-Z0-9_]+$", message = "Username can only contain letters, numbers, and underscores")
     private String username;
 
-    @NotBlank(message = "Email is required")
     @Email(message = "Please provide a valid email address")
     private String email;
 
-    @NotBlank(message = "Password is required")
-    @Size(min = 6, message = "Password must be at least 6 characters long")
-    private String password;
+    private Boolean active;
 
-    public RegisterDto() {
+    private Set<String> roles;
+
+    public UpdateUserRequest() {
     }
 
-    public RegisterDto(String name, String username, String email, String password) {
+    public UpdateUserRequest(String name, String username, String email, Boolean active, Set<String> roles) {
         this.name = name;
         this.username = username;
         this.email = email;
-        this.password = password;
+        this.active = active;
+        this.roles = roles;
     }
 
     public String getName() {
@@ -58,11 +57,19 @@ public class RegisterDto {
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
+    public Boolean getActive() {
+        return active;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setActive(Boolean active) {
+        this.active = active;
+    }
+
+    public Set<String> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<String> roles) {
+        this.roles = roles;
     }
 }

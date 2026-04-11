@@ -1,58 +1,108 @@
 package com.security.config;
 
+import com.security.entity.AuthProvider;
 import com.security.entity.Role;
 import com.security.entity.User;
 import com.security.repository.RoleRepository;
 import com.security.repository.UserRepository;
-import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
-
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Collections;
 import java.util.HashSet;
-import java.util.List;
+import java.util.Optional;
 
+/**
+ * Initializes default roles (ROLE_USER, ROLE_ADMIN) and a default admin user
+ * if they don't already exist in the database.
+ */
 @Component
-@RequiredArgsConstructor
 public class DataInitializer implements CommandLineRunner {
 
-    private final UserRepository userRepository;
+    private static final Logger log = LoggerFactory.getLogger(DataInitializer.class);
+
     private final RoleRepository roleRepository;
+    private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
+
+    @Value("${app.default-admin.email}")
+    private String adminEmail;
+
+    @Value("${app.default-admin.password}")
+    private String adminPassword;
+
+    @Value("${app.default-user.email}")
+    private String userEmail;
+
+    @Value("${app.default-user.password}")
+    private String userPassword;
+
+    public DataInitializer(RoleRepository roleRepository,
+                           UserRepository userRepository,
+                           PasswordEncoder passwordEncoder) {
+        this.roleRepository = roleRepository;
+        this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
+    }
 
     @Override
     @Transactional
-    public void run(String... args) throws Exception {
-        // 1. Ensure Roles exist
-        Role adminRole = roleRepository.findByName("ROLE_ADMIN")
-                .orElseGet(() -> roleRepository.save(new Role(null, "ROLE_ADMIN")));
+    public void run(String... args) {
+        log.info("Checking database for default roles and accounts...");
+        initializeRoles();
+        
+        // Initialize or update Admin Account
+        initializeAccount(adminEmail, adminPassword, "ROLE_ADMIN", "System Administrator", "admin");
+        
+        // Initialize or update Standard User Account
+        initializeAccount(userEmail, userPassword, "ROLE_USER", "Standard User", "user");
+    }
 
-        roleRepository.findByName("ROLE_USER")
-                .orElseGet(() -> roleRepository.save(new Role(null, "ROLE_USER")));
+    private void initializeRoles() {
+        createRoleIfNotFound("ROLE_USER");
+        createRoleIfNotFound("ROLE_ADMIN");
+    }
 
-        // 2. Create Admin user if it doesn't exist
-        if (!userRepository.existsByUsername("admin@chaitanyatechworld.com")) {
-            User admin = new User();
-            admin.setUsername("admin@chaitanyatechworld.com");
-            admin.setEmail("admin@chaitanyatechworld.com");
-            admin.setPassword(passwordEncoder.encode("admin@chaitanyatechworld.com")); // Replace with a secure password
-            admin.setActive(true);
-            admin.setRoles(new HashSet<>(Collections.singletonList(adminRole)));
-
-            userRepository.save(admin);
-            System.out.println("Admin user created successfully.");
+    private Role createRoleIfNotFound(String roleName) {
+        Optional<Role> roleOpt = roleRepository.findByName(roleName);
+        if (roleOpt.isEmpty()) {
+            Role role = new Role();
+            role.setName(roleName);
+            log.info("Created default role: {}", roleName);
+            return roleRepository.save(role);
         }
+        return roleOpt.get();
+    }
 
-        // 3. Fix existing inactive users (keeping your original logic)
-        List<User> users = userRepository.findAll();
-        for (User user : users) {
-            if (!user.isActive()) {
-                user.setActive(true);
-                userRepository.save(user);
-            }
+    private void initializeAccount(String email, String password, String roleName, String displayName, String username) {
+        Optional<User> userOpt = userRepository.findByEmail(email);
+        
+        if (userOpt.isEmpty()) {
+            Role role = roleRepository.findByName(roleName)
+                    .orElseGet(() -> createRoleIfNotFound(roleName));
+
+            User user = User.builder()
+                    .name(displayName)
+                    .username(username)
+                    .email(email)
+                    .password(passwordEncoder.encode(password))
+                    .provider(AuthProvider.LOCAL)
+                    .isActive(true)
+                    .roles(new HashSet<>(Collections.singletonList(role)))
+                    .build();
+            userRepository.save(user);
+            log.info("Created default account for {}: {}", roleName, email);
+        } else {
+            User user = userOpt.get();
+            // Re-encode and update password to ensure it matches current configuration
+            user.setPassword(passwordEncoder.encode(password));
+            userRepository.save(user);
+            log.info("Synchronized password for existing account: {}", email);
         }
     }
 }

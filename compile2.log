@@ -1,0 +1,54 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< com.security:security-service >--------------------
+[INFO] Building security-service 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.3.2:clean (default-clean) @ security-service ---
+[INFO] Deleting E:\myproject\findsharp\security-service\target
+[INFO] 
+[INFO] --- maven-resources-plugin:3.3.1:resources (default-resources) @ security-service ---
+[INFO] Copying 3 resources from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.13.0:compile (default-compile) @ security-service ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 35 source files with javac [debug parameters release 21] to target\classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/config/SecurityConfig.java:[5,36] cannot find symbol
+  symbol:   class CustomOAuth2UserService
+  location: package com.security.security.oauth2
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/config/SecurityConfig.java:[38,19] cannot find symbol
+  symbol:   class OAuth2UserService
+  location: class com.security.config.SecurityConfig
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/config/SecurityConfig.java:[33,1] cannot find symbol
+  symbol:   class OAuth2UserService
+  location: class com.security.config.SecurityConfig
+[INFO] 3 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  16.923 s
+[INFO] Finished at: 2026-03-30T21:38:45+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.13.0:compile (default-compile) on project security-service: Compilation failure: Compilation failure: 
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/config/SecurityConfig.java:[5,36] cannot find symbol
+[ERROR]   symbol:   class CustomOAuth2UserService
+[ERROR]   location: package com.security.security.oauth2
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/config/SecurityConfig.java:[38,19] cannot find symbol
+[ERROR]   symbol:   class OAuth2UserService
+[ERROR]   location: class com.security.config.SecurityConfig
+[ERROR] /E:/myproject/findsharp/security-service/src/main/java/com/security/config/SecurityConfig.java:[33,1] cannot find symbol
+[ERROR]   symbol:   class OAuth2UserService
+[ERROR]   location: class com.security.config.SecurityConfig
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
