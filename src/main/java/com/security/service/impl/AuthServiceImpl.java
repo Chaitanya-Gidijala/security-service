@@ -136,11 +136,11 @@ public class AuthServiceImpl implements AuthService {
     private UserDto mapToUserDto(User user) {
         return UserDto.builder()
                 .id(user.getId())
-                .name(user.getName())
+                .name(user.getName() != null ? user.getName() : user.getUsername())
                 .username(user.getUsername())
                 .email(user.getEmail())
                 .active(user.isActive())
-                .provider(user.getProvider().name())
+                .provider(user.getProvider() != null ? user.getProvider().name() : AuthProvider.LOCAL.name())
                 .roles(user.getRoles().stream().map(Role::getName).collect(Collectors.toSet()))
                 .createdAt(user.getCreatedAt())
                 .updatedAt(user.getUpdatedAt())
