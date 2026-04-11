@@ -31,3 +31,8 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Custom ###
+.env
+client_secret_*.json
+*.log
