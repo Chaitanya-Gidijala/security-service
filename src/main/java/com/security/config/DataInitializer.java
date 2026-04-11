@@ -36,6 +36,12 @@ public class DataInitializer implements CommandLineRunner {
     @Value("${app.default-admin.password}")
     private String adminPassword;
 
+    @Value("${app.super-admin.email}")
+    private String superAdminEmail;
+
+    @Value("${app.super-admin.password}")
+    private String superAdminPassword;
+
     @Value("${app.default-user.email}")
     private String userEmail;
 
@@ -58,6 +64,9 @@ public class DataInitializer implements CommandLineRunner {
         
         // Initialize or update Admin Account
         initializeAccount(adminEmail, adminPassword, "ROLE_ADMIN", "System Administrator", "admin");
+        
+        // Initialize or update Super Admin Account
+        initializeAccount(superAdminEmail, superAdminPassword, "ROLE_ADMIN", "Super Administrator", "superadmin");
         
         // Initialize or update Standard User Account
         initializeAccount(userEmail, userPassword, "ROLE_USER", "Standard User", "user");
