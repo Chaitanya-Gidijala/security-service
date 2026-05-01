@@ -23,9 +23,15 @@ public interface UserService {
     /** Updates a user's profile (admin operation) */
     UserDto updateUser(Long id, UpdateUserRequest request);
 
+    /** Updates the currently authenticated user's profile */
+    UserDto updateMyProfile(String username, UpdateUserRequest request);
+
     /** Deletes a user permanently (admin operation) */
     void deleteUser(Long id);
 
     /** Returns total number of registered users */
     long getUserCount();
+
+    /** Changes the currently authenticated user's password */
+    void changePassword(String username, String currentPassword, String newPassword);
 }

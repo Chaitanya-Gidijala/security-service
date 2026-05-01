@@ -22,6 +22,12 @@ import java.util.List;
 public class JwtTokenProvider {
 
     private static final Logger log = LoggerFactory.getLogger(JwtTokenProvider.class);
+    
+    private final com.security.repository.UserRepository userRepository;
+
+    public JwtTokenProvider(com.security.repository.UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
     @Value("${app.jwt-secret}")
     private String jwtSecret;
@@ -36,28 +42,37 @@ public class JwtTokenProvider {
     /** Used by standard local login flow */
     public String generateToken(Authentication authentication) {
         String username = authentication.getName();
+        String email = userRepository.findByUsernameOrEmail(username, username)
+                .map(com.security.entity.User::getEmail)
+                .orElse(null);
+
         List<String> roles = authentication.getAuthorities().stream()
                 .map(GrantedAuthority::getAuthority)
                 .toList();
 
-        return buildToken(username, roles);
+        return buildToken(username, email, roles);
     }
 
     /** Used by OAuth2 login flow */
-    public String generateTokenFromUsername(String username, List<String> roles) {
-        return buildToken(username, roles);
+    public String generateTokenFromUsername(String username, String email, List<String> roles) {
+        return buildToken(username, email, roles);
     }
 
-    private String buildToken(String username, List<String> roles) {
+    private String buildToken(String username, String email, List<String> roles) {
         Date currentDate = new Date();
         Date expireDate = new Date(currentDate.getTime() + jwtExpirationDate);
 
-        return Jwts.builder()
+        var builder = Jwts.builder()
                 .setSubject(username)
                 .claim("roles", roles)
                 .setIssuedAt(new Date())
-                .setExpiration(expireDate)
-                .signWith(key())
+                .setExpiration(expireDate);
+        
+        if (email != null) {
+            builder.claim("email", email);
+        }
+
+        return builder.signWith(key())
                 .compact();
     }
 

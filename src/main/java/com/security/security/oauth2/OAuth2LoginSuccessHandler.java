@@ -48,11 +48,16 @@ public class OAuth2LoginSuccessHandler extends SimpleUrlAuthenticationSuccessHan
         }
 
         String username = authentication.getName();
+        String email = null;
+        if (authentication.getPrincipal() instanceof OAuth2UserPrincipal principal) {
+            email = principal.getUser().getEmail();
+        }
+
         List<String> roles = authentication.getAuthorities().stream()
                 .map(GrantedAuthority::getAuthority)
                 .collect(Collectors.toList());
 
-        String token = jwtTokenProvider.generateTokenFromUsername(username, roles);
+        String token = jwtTokenProvider.generateTokenFromUsername(username, email, roles);
         log.info("OAuth2 login success for: '{}'. Redirecting to frontend with JWT.", username);
 
         String targetUrl = UriComponentsBuilder.fromUriString(redirectUri)

@@ -24,6 +24,8 @@ public class RegisterDto {
     @Size(min = 6, message = "Password must be at least 6 characters long")
     private String password;
 
+    private String role; // Optional role for registration (e.g., ROLE_SELLER)
+
     public RegisterDto() {
     }
 
@@ -64,5 +66,13 @@ public class RegisterDto {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }

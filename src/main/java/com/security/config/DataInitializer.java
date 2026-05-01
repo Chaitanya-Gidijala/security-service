@@ -89,9 +89,7 @@ public class DataInitializer implements CommandLineRunner {
     }
 
     private void initializeAccount(String email, String password, String roleName, String displayName, String username) {
-        Optional<User> userOpt = userRepository.findByEmail(email);
-        
-        if (userOpt.isEmpty()) {
+        if (!userRepository.existsByEmail(email)) {
             Role role = roleRepository.findByName(roleName)
                     .orElseGet(() -> createRoleIfNotFound(roleName));
 
@@ -107,11 +105,7 @@ public class DataInitializer implements CommandLineRunner {
             userRepository.save(user);
             log.info("Created default account for {}: {}", roleName, email);
         } else {
-            User user = userOpt.get();
-            // Re-encode and update password to ensure it matches current configuration
-            user.setPassword(passwordEncoder.encode(password));
-            userRepository.save(user);
-            log.info("Synchronized password for existing account: {}", email);
+            log.debug("Account already exists: {}", email);
         }
     }
 }

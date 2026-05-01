@@ -3,6 +3,7 @@ package com.security.controller;
 import com.security.dto.ApiResponse;
 import com.security.dto.UpdateUserRequest;
 import com.security.dto.UserDto;
+import com.security.dto.ChangePasswordRequest;
 import com.security.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
@@ -46,6 +47,28 @@ public class UserController {
         return ResponseEntity.ok(ApiResponse.success("Profile fetched successfully", user));
     }
 
+    @PutMapping("/me")
+    @Operation(summary = "Update My Profile", description = "Allows the currently authenticated user to update their own profile")
+    public ResponseEntity<ApiResponse<UserDto>> updateMyProfile(@AuthenticationPrincipal UserDetails userDetails,
+            @Valid @RequestBody UpdateUserRequest request) {
+        log.info("Profile update request for: {}", userDetails.getUsername());
+        UserDto updatedUser = userService.updateMyProfile(userDetails.getUsername(), request);
+        return ResponseEntity.ok(ApiResponse.success("Profile updated successfully", updatedUser));
+    }
+
+    @PutMapping("/change-password")
+    @Operation(summary = "Change My Password", description = "Allows the currently authenticated user to change their password")
+    public ResponseEntity<ApiResponse<Void>> changePassword(@AuthenticationPrincipal UserDetails userDetails,
+            @Valid @RequestBody ChangePasswordRequest request) {
+        log.info("Password change request for: {}", userDetails.getUsername());
+        try {
+            userService.changePassword(userDetails.getUsername(), request.getCurrentPassword(), request.getNewPassword());
+            return ResponseEntity.ok(ApiResponse.success("Password changed successfully"));
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().body(ApiResponse.error(e.getMessage()));
+        }
+    }
+
     @GetMapping
     @PreAuthorize("hasRole('ADMIN')")
     @Operation(summary = "Get All Users (Admin)", description = "Returns a list of all registered users. ADMIN only.")
@@ -68,7 +91,7 @@ public class UserController {
     @PreAuthorize("hasRole('ADMIN')")
     @Operation(summary = "Update User (Admin)", description = "Update any user's profile or roles. ADMIN only.")
     public ResponseEntity<ApiResponse<UserDto>> updateUser(@PathVariable Long id,
-                                                           @Valid @RequestBody UpdateUserRequest request) {
+            @Valid @RequestBody UpdateUserRequest request) {
         log.info("Admin: updating user id: {}", id);
         UserDto updatedUser = userService.updateUser(id, request);
         return ResponseEntity.ok(ApiResponse.success("User updated successfully", updatedUser));

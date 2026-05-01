@@ -39,6 +39,15 @@ public class User {
     @Column(nullable = false)
     private boolean isActive = true;
 
+    @Column(length = 20)
+    private String phone;
+
+    @Column
+    private String location;
+
+    @Column
+    private String website;
+
     @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinTable(
         name = "users_roles",
@@ -58,7 +67,7 @@ public class User {
     public User() {
     }
 
-    public User(Long id, String name, String username, String email, String password, AuthProvider provider, String providerId, boolean isActive, Set<Role> roles, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public User(Long id, String name, String username, String email, String password, AuthProvider provider, String providerId, boolean isActive, Set<Role> roles, String phone, String location, String website, LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.id = id;
         this.name = name;
         this.username = username;
@@ -68,6 +77,9 @@ public class User {
         this.providerId = providerId;
         this.isActive = isActive;
         this.roles = roles;
+        this.phone = phone;
+        this.location = location;
+        this.website = website;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
     }
@@ -99,6 +111,15 @@ public class User {
     public Set<Role> getRoles() { return roles; }
     public void setRoles(Set<Role> roles) { this.roles = roles; }
 
+    public String getPhone() { return phone; }
+    public void setPhone(String phone) { this.phone = phone; }
+
+    public String getLocation() { return location; }
+    public void setLocation(String location) { this.location = location; }
+
+    public String getWebsite() { return website; }
+    public void setWebsite(String website) { this.website = website; }
+
     public LocalDateTime getCreatedAt() { return createdAt; }
     public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
 
@@ -119,6 +140,9 @@ public class User {
         private String providerId;
         private boolean isActive = true;
         private Set<Role> roles;
+        private String phone;
+        private String location;
+        private String website;
         private LocalDateTime createdAt;
         private LocalDateTime updatedAt;
 
@@ -131,11 +155,14 @@ public class User {
         public UserBuilder providerId(String providerId) { this.providerId = providerId; return this; }
         public UserBuilder isActive(boolean isActive) { this.isActive = isActive; return this; }
         public UserBuilder roles(Set<Role> roles) { this.roles = roles; return this; }
+        public UserBuilder phone(String phone) { this.phone = phone; return this; }
+        public UserBuilder location(String location) { this.location = location; return this; }
+        public UserBuilder website(String website) { this.website = website; return this; }
         public UserBuilder createdAt(LocalDateTime createdAt) { this.createdAt = createdAt; return this; }
         public UserBuilder updatedAt(LocalDateTime updatedAt) { this.updatedAt = updatedAt; return this; }
 
         public User build() {
-            return new User(id, name, username, email, password, provider, providerId, isActive, roles, createdAt, updatedAt);
+            return new User(id, name, username, email, password, provider, providerId, isActive, roles, phone, location, website, createdAt, updatedAt);
         }
     }
 }

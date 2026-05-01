@@ -91,12 +91,15 @@ public class AuthServiceImpl implements AuthService {
                     "Email '" + registerDto.getEmail() + "' is already registered");
         }
 
-        Role userRole = roleRepository.findByName("ROLE_USER")
+        String roleName = (registerDto.getRole() != null && !registerDto.getRole().isEmpty()) 
+                ? registerDto.getRole() : "ROLE_USER";
+
+        Role authRole = roleRepository.findByName(roleName)
                 .orElseThrow(() -> new RuntimeException(
-                        "Default role ROLE_USER not found. Please contact the administrator."));
+                        "Role " + roleName + " not found. Please contact the administrator."));
 
         Set<Role> roles = new HashSet<>();
-        roles.add(userRole);
+        roles.add(authRole);
 
         User user = User.builder()
                 .name(registerDto.getName())

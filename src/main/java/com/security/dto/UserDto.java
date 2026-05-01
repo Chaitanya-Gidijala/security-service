@@ -12,13 +12,16 @@ public class UserDto {
     private boolean active;
     private String provider;
     private Set<String> roles;
+    private String phone;
+    private String location;
+    private String website;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
     public UserDto() {
     }
 
-    public UserDto(Long id, String name, String username, String email, boolean active, String provider, Set<String> roles, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public UserDto(Long id, String name, String username, String email, boolean active, String provider, Set<String> roles, String phone, String location, String website, LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.id = id;
         this.name = name;
         this.username = username;
@@ -26,6 +29,9 @@ public class UserDto {
         this.active = active;
         this.provider = provider;
         this.roles = roles;
+        this.phone = phone;
+        this.location = location;
+        this.website = website;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
     }
@@ -51,6 +57,15 @@ public class UserDto {
     public Set<String> getRoles() { return roles; }
     public void setRoles(Set<String> roles) { this.roles = roles; }
 
+    public String getPhone() { return phone; }
+    public void setPhone(String phone) { this.phone = phone; }
+
+    public String getLocation() { return location; }
+    public void setLocation(String location) { this.location = location; }
+
+    public String getWebsite() { return website; }
+    public void setWebsite(String website) { this.website = website; }
+
     public LocalDateTime getCreatedAt() { return createdAt; }
     public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
 
@@ -69,6 +84,9 @@ public class UserDto {
         private boolean active;
         private String provider;
         private Set<String> roles;
+        private String phone;
+        private String location;
+        private String website;
         private LocalDateTime createdAt;
         private LocalDateTime updatedAt;
 
@@ -79,11 +97,14 @@ public class UserDto {
         public UserDtoBuilder active(boolean active) { this.active = active; return this; }
         public UserDtoBuilder provider(String provider) { this.provider = provider; return this; }
         public UserDtoBuilder roles(Set<String> roles) { this.roles = roles; return this; }
+        public UserDtoBuilder phone(String phone) { this.phone = phone; return this; }
+        public UserDtoBuilder location(String location) { this.location = location; return this; }
+        public UserDtoBuilder website(String website) { this.website = website; return this; }
         public UserDtoBuilder createdAt(LocalDateTime createdAt) { this.createdAt = createdAt; return this; }
         public UserDtoBuilder updatedAt(LocalDateTime updatedAt) { this.updatedAt = updatedAt; return this; }
 
         public UserDto build() {
-            return new UserDto(id, name, username, email, active, provider, roles, createdAt, updatedAt);
+            return new UserDto(id, name, username, email, active, provider, roles, phone, location, website, createdAt, updatedAt);
         }
     }
 }
